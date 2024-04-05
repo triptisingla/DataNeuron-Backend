@@ -16,6 +16,7 @@ export const register = async (req, res) => {
     //     password,
     // });
     // return res.status(200).send({ data: 'User Registered!' })
+    
 
     // Detailed validation
     if (!name || !email || !password) {

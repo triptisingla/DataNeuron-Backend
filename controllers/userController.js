@@ -1,5 +1,5 @@
 import { User } from "../models/userSchema.js";
-
+import validator from "validator";
 
 export const register = async (req, res) => {
     const { name, email, password } = req.body;
@@ -16,7 +16,7 @@ export const register = async (req, res) => {
     //     password,
     // });
     // return res.status(200).send({ data: 'User Registered!' })
-    
+
 
     // Detailed validation
     if (!name || !email || !password) {

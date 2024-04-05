@@ -79,3 +79,12 @@ export const update = async (req, res) => {
         return res.status(500).send({ message: 'Error updating user.' });
     }
 };
+
+export const getUsers = async (req, res) => {
+    try {
+        const users = await User.find().select('-password'); // Exclude password field
+        res.status(200).send({ data: users });
+    } catch (err) {
+        res.status(500).send('Server error');
+    }
+}
